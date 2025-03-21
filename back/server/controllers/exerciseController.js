@@ -32,7 +32,7 @@ exports.createExercise = async (req, res) => {
 // Obtener todos los ejercicios
 exports.getAllExercises = async (req, res) => {
   try {
-    const exercises = await Exercise.find().populate("topic");
+    const exercises = await Exercise.find().populate("topicId");
     res.json(exercises);
   } catch (error) {
     res.status(500).json({ message: "Error al obtener ejercicios", error });
@@ -42,7 +42,7 @@ exports.getAllExercises = async (req, res) => {
 // Obtener un ejercicio por ID
 exports.getExerciseById = async (req, res) => {
   try {
-    const exercise = await Exercise.findById(req.params.id).populate("topic");
+    const exercise = await Exercise.findById(req.params.id).populate("topicId");
     if (!exercise)
       return res.status(404).json({ message: "Ejercicio no encontrado" });
     res.json(exercise);

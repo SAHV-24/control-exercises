@@ -7,6 +7,8 @@ const exerciseRoutes = require("./routes/exerciseRoutes");
 require("dotenv").config();
 const uri = process.env.MONGODB_URI;
 
+console.log("URI\n\n\n", uri);
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -38,9 +40,9 @@ mongoose.connect(uri, {
 //       <li>POST /topics</li>
 //       <li>PUT /topics/:id</li>
 //       <li>DELETE /topics/:id</li>
-      
+
 //     </ul>
-    
+
 //     `);
 // });
 app.use("/users", userRoutes);
