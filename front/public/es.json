@@ -1,0 +1,6 @@
+{
+    "app": {
+      "hello": "Hola {{value}}",
+      "title": "Demo de Traducción"
+    }
+  }

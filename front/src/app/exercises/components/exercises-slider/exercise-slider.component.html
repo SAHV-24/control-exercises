@@ -1,0 +1,38 @@
+<div class="flex items-center justify-center w-[100%]">
+  <swiper-container
+    effect="coverflow"
+    navigation="true"
+    [slidesPerView]="3"
+    [centeredSlides]="true"
+    [loop]="true"
+  >
+    <swiper-slide *ngFor="let ex of exercises; let i = index">
+      <p-card
+        [style]="{ overflow: 'hidden', height: '100%' }"
+        class="card-component"
+      >
+        <ng-template #header>
+          <img alt="Card" class="w-full min-h-full" [src]="ex?.imageUrl" />
+        </ng-template>
+        <ng-template #title class="flex items-center justify-between">
+          <span class="text-[13px] md:text-xl w-[100%]">
+            {{ ex.title }}
+          </span>
+        </ng-template>
+        <p class="text-[10px] md:text-lg"></p>
+        <ng-template #footer>
+          <div class="flex gap-4 mt-1 justify-end">
+            <p-button
+              pRipple
+              label=""
+              icon="pi pi-arrow-right"
+              styleClass="w-full"
+              (click)="goToExercise(ex._id)"
+              [severity]="'contrast'"
+            />
+          </div>
+        </ng-template>
+      </p-card>
+    </swiper-slide>
+  </swiper-container>
+</div>

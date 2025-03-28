@@ -1,0 +1,51 @@
+/* archivo: app.component.scss */
+@import 'tailwindcss/utilities';
+
+:host ::ng-deep {
+  .navbar-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 90%;
+    max-width: 600px;
+  }
+
+  .rounded-menubar {
+    border-radius: 2rem !important;
+    background-color: rgba(56, 189, 248, 0.95) !important; /* sky-400 con ligera transparencia */
+    border: none !important;
+    padding: 0.5rem 1.5rem !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+    color: white !important;
+    font-weight: 500 !important;
+    padding: 0.75rem 1rem !important;
+    transition: all 0.3s ease !important;
+    border-radius: 1.5rem !important;
+  }
+
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+  }
+
+  .p-menubar .p-menubar-root-list > .p-menuitem.p-highlight > .p-menuitem-link {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+  }
+
+  /* Media queries para responsividad */
+  @media (max-width: 640px) {
+    .navbar-container {
+      width: 95%;
+    }
+    
+    .rounded-menubar {
+      padding: 0.5rem 1rem !important;
+    }
+  }
+}

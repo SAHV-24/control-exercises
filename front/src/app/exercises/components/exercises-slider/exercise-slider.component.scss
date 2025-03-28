@@ -1,0 +1,32 @@
+swiper-container {
+    width: 50%;
+  }
+  
+  swiper-container-wrapper {
+    display: flex;
+    background-color: green;
+    justify-content: center;
+  }
+  
+  swiper-button-prev,
+  swiper-button-next {
+    color: white;
+  }
+  
+  swiper-button-prev {
+    justify-content: center;
+    color: var(blue, white);
+  }ñ
+  
+  .swiper-button-next, .swiper-button-prev {
+      z-index: 10;
+      cursor: pointer;
+      display: flex
+  ;
+      align-items: center;
+      justify-content: center;
+      color: white;
+  }
+
+
+  

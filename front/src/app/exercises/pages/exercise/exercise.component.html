@@ -1,0 +1,85 @@
+<p-toast />
+<div class="flex-col exercise-container">
+  <div class="exercise-container">
+    <!-- Left side: Content -->
+    <div class="exercise-content">
+      <div class="flex items-center justify-between mb-4">
+        <p-button
+          (click)="goBack()"
+          severity="secondary"
+          icon="pi pi-arrow-left"
+        ></p-button>
+        <div class="flex items-center justify-center gap-5 font-bold italic">
+          <p>Next Exercise ...</p>
+          <p-button
+            (click)="goNextExercise()"
+            icon="pi pi-arrow-right"
+          ></p-button>
+        </div>
+      </div>
+      <h1 class="exercise-title">{{ exercise?.title }}</h1>
+
+      <!-- <div class="exercise-question-container">
+        <h2 class="exercise-question">{{ exercise?.question }}</h2>
+        <p class="exercise-description">{{ exercise?.description }}</p>
+      </div> -->
+
+      <div class="options-container" *ngIf="isSubmitted">
+        <ng-container>
+          <button class="option-button">
+            <img [src]="exercise?.answer" class="img-option" />
+          </button>
+        </ng-container>
+      </div>
+      <div class="actions">
+        <button
+          class="submit-button"
+          [disabled]="isSubmitted"
+          (click)="submitAnswer()"
+        >
+          Check
+        </button>
+      </div>
+      <div
+        *ngIf="isSubmitted"
+        class="border-3 border-gray-300 py-2 my-3 rounded-2xl"
+      >
+        <div class="items-center justify-center">
+          <h2 class="text-2xl p-5 font-bold font-italic">How did it went?</h2>
+        </div>
+        <div class="flex items-center justify-around">
+          <button
+            class="submit-button !bg-emerald-500 !hover:bg-emerald-700"
+            (click)="handleCorrectAnswer()"
+          >
+            I got it right!
+          </button>
+          <button
+            class="submit-button !bg-red-400 !hover:bg-red-600"
+            (click)="handleBadAnswer()"
+            [ngClass]="{ '!bg-red-900 ': isCorrect }"
+            [disabled]="isCorrect"
+          >
+            Didn't went as good :(
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise-image-container">
+      <div class="image-container">
+        <img
+          (mouseenter)="isImageHovered = true"
+          (mouseleave)="isImageHovered = false"
+          *ngIf="exercise?.imageUrl"
+          [src]="exercise?.imageUrl"
+          alt="Exercise illustration"
+          class="exercise-image"
+        />
+      </div>
+      <div *ngIf="!exercise?.imageUrl" class="image-placeholder">
+        No image available
+      </div>
+    </div>
+  </div>
+</div>
