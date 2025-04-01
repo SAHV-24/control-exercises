@@ -2,12 +2,10 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const userRoutes = require("./routes/userRoutes");
-const topicRoutes = require("./routes/topicRoutes");
 const exerciseRoutes = require("./routes/exerciseRoutes");
 require("dotenv").config();
 const uri = process.env.MONGODB_URI;
 
-console.log("URI\n\n\n", uri);
 
 const app = express();
 app.use(cors());
@@ -46,7 +44,6 @@ mongoose.connect(uri, {
 //     `);
 // });
 app.use("/users", userRoutes);
-app.use("/topics", topicRoutes);
 app.use("/exercises", exerciseRoutes);
 
 app.listen(5000, () =>

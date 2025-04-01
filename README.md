@@ -1,6 +1,5 @@
 # Aplicación para Ejercicios de Control
 
-
 ## API
 ---
 
@@ -13,3 +12,16 @@ Para correr la API o "parte interna" de la aplicación, hacer los siguientes pas
 4. Luego de eso, escribir en la terminal:
 `nodemon server.js`
 5. La API estará funcionando
+
+## VISTA
+---
+
+Para correr la Vista deberá de ejecutar lo siguiente
+
+1. Moverse a la carpeta de "front" con "cd front"
+3. Luego abrir un terminal y escribir "npm install"
+    `npm install`
+4. Luego de eso, escribir en la terminal:
+    `ng serve`
+5. Esto te devolverá un URL, este URL podrás ponerlo en tu navegador.
+

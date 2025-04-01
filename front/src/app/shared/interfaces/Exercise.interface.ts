@@ -6,6 +6,8 @@ export interface Exercise {
   question: string;
   description: string;
   answer: string;
+  answcod: string;
+  imageport: string;
 }
 
 export interface Option {

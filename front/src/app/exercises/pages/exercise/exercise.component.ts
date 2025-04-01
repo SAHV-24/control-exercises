@@ -23,6 +23,7 @@ export class ExerciseComponent implements OnInit {
   public isCorrect: boolean = false;
   public isSubmitted: boolean = false;
   public isImageHovered: boolean = false;
+  public isCodeVisible: boolean = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -37,11 +38,16 @@ export class ExerciseComponent implements OnInit {
           .getExerciseById(params['id'])
           .subscribe((exercise) => {
             this.exercise = exercise;
+            this.isCodeVisible = false;
           });
     });
   }
 
-  goBack() {
+  openCode(): void {
+    this.isCodeVisible = !this.isCodeVisible;
+  }
+
+  goBack(): void {
     this.location.back();
   }
   goNextExercise(): void {
@@ -68,10 +74,6 @@ export class ExerciseComponent implements OnInit {
       detail: 'Great job! Lets move to the next exercise!',
       life: 4500,
     });
-
-    setTimeout(() => {
-      this.goNextExercise();
-    }, 5000);
   }
 
   closeDialog() {

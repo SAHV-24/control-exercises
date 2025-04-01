@@ -42,7 +42,7 @@
       </div>
       <div
         *ngIf="isSubmitted"
-        class="border-3 border-gray-300 py-2 my-3 rounded-2xl"
+        class="border-3 border-gray-300 py-2 my-3 gap-0 rounded-2xl"
       >
         <div class="items-center justify-center">
           <h2 class="text-2xl p-5 font-bold font-italic">How did it went?</h2>
@@ -62,6 +62,21 @@
           >
             Didn't went as good :(
           </button>
+        </div>
+        <div class="flex flex-col items-center justify-center mt-3 animate-pulse">
+          <button
+            class="b-0 hover:underline underline-offset-1 hover:cursor-pointer italic text-2xl font-bold text-transparent  bg-linear-to-r from-sky-400 to-orange-500 bg-clip-text"
+            (click)="openCode()"
+            [ngClass]="{ 'bg-gray-200': isCodeVisible }"
+          >
+            <i class="pi pi-angle-down"></i> MATLAB Code
+          </button>
+          <pre
+            class="bg-gray-700 p-5 italic border-3 border-slate-300"
+            *ngIf="isCodeVisible"
+          ><code class=" text-white p-2 rounded-lg">
+              {{ exercise?.answcod }}
+            </code></pre>
         </div>
       </div>
     </div>

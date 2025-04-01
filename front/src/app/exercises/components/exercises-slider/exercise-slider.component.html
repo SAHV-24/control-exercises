@@ -12,7 +12,9 @@
         class="card-component"
       >
         <ng-template #header>
-          <img alt="Card" class="w-full min-h-full" [src]="ex?.imageUrl" />
+          <div class="image-container">
+            <img alt="Card" class="w-full min-h-full" [src]="ex?.imageport" />
+          </div>
         </ng-template>
         <ng-template #title class="flex items-center justify-between">
           <span class="text-[13px] md:text-xl w-[100%]">
