@@ -2,6 +2,22 @@
 <div class="flex-col exercise-container">
   <div class="exercise-container">
     <!-- Left side: Content -->
+    <div class="exercise-image-container">
+      <div class="image-container">
+        <img
+          (mouseenter)="isImageHovered = true"
+          (mouseleave)="isImageHovered = false"
+          *ngIf="exercise?.imageUrl"
+          [src]="exercise?.imageUrl"
+          alt="Exercise illustration"
+          class="exercise-image"
+        />
+      </div>
+      <div *ngIf="!exercise?.imageUrl" class="image-placeholder">
+        No image available
+      </div>
+    </div>
+
     <div class="exercise-content">
       <div class="flex items-center justify-between mb-4">
         <p-button
@@ -18,11 +34,6 @@
         </div>
       </div>
       <h1 class="exercise-title">{{ exercise?.title }}</h1>
-
-      <!-- <div class="exercise-question-container">
-        <h2 class="exercise-question">{{ exercise?.question }}</h2>
-        <p class="exercise-description">{{ exercise?.description }}</p>
-      </div> -->
 
       <div class="options-container" *ngIf="isSubmitted">
         <ng-container>
@@ -63,9 +74,11 @@
             Didn't went as good :(
           </button>
         </div>
-        <div class="flex flex-col items-center justify-center mt-3 animate-pulse">
+        <div
+          class="flex flex-col items-center justify-center mt-3 animate-pulse"
+        >
           <button
-            class="b-0 hover:underline underline-offset-1 hover:cursor-pointer italic text-2xl font-bold text-transparent  bg-linear-to-r from-sky-400 to-orange-500 bg-clip-text"
+            class="b-0 hover:underline underline-offset-1 hover:cursor-pointer italic text-2xl font-bold text-transparent bg-linear-to-r from-sky-400 to-orange-500 bg-clip-text"
             (click)="openCode()"
             [ngClass]="{ 'bg-gray-200': isCodeVisible }"
           >
@@ -78,22 +91,6 @@
               {{ exercise?.answcod }}
             </code></pre>
         </div>
-      </div>
-    </div>
-
-    <div class="exercise-image-container">
-      <div class="image-container">
-        <img
-          (mouseenter)="isImageHovered = true"
-          (mouseleave)="isImageHovered = false"
-          *ngIf="exercise?.imageUrl"
-          [src]="exercise?.imageUrl"
-          alt="Exercise illustration"
-          class="exercise-image"
-        />
-      </div>
-      <div *ngIf="!exercise?.imageUrl" class="image-placeholder">
-        No image available
       </div>
     </div>
   </div>

@@ -41,6 +41,7 @@ export class ExerciseComponent implements OnInit {
             this.isCodeVisible = false;
           });
     });
+
   }
 
   openCode(): void {

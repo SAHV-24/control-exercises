@@ -1,5 +1,6 @@
 /* archivo: app.component.scss */
-@import 'tailwindcss/utilities';
+@use 'tailwindcss/utilities';
+
 
 :host ::ng-deep {
   .navbar-container {
