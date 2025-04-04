@@ -1,3 +1,3 @@
 export const environment: any = {
-  BASE_URL: 'http://localhost:5000',
+  BASE_URL: 'https://my-control-app.wonderfulpebble-b4417f8e.westus2.azurecontainerapps.io/',
 };
